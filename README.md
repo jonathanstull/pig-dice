@@ -45,8 +45,8 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 * Business logic that creates a player object, stores a players total and round scores and a unique ID
 * Game rules:
   *  If the player rolls a 1, they score nothing for the turn but the player score is not affected
-  * If the player rolls any other number, it is added to their turn total until their turn ends or they roll a 1
-  * When their turn ends, their turn total is added to their player score
+  * If the player rolls any other number, it is added to their turn score until their turn ends or they roll a 1
+  * When their turn ends, their turn score is added to their player score
   * When the player score hits 100, the game ends, the player with 100 wins, and the winner receives a victory point
 * User logic that displays all relevant scoring information, the rules of the game, buttons for rolling and ending a turn
 
@@ -55,11 +55,13 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 Describe: PlayerConstructor();
   1. Test: "It creates a constructor object for a player"
   Code:
-  function PlayerConstructor {playerId, turnTotal, playerScore}
-  Expected Output: let playerName = new PlayerConstructor {playerId, turnTotal, playerScore}
+  function PlayerConstructor {playerId, turnScore, playerScore}
+  Expected Output: let playerName = new PlayerConstructor {playerId, turnScore, playerScore}
 
-  2. Test:
+  Describe: "createPlayer"
+  2. Test: "It creates a player using the PlayerConstructor"
   Code:
+  let createPlayer = new PlayerConstructor(playerId, turnScore, playerScore)
   Expected Output:
 
 ## MIT License

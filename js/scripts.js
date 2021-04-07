@@ -1,8 +1,8 @@
 // Business logic
 
-function PlayerConstructor(playerId, turnTotal, playerScore) {
+function PlayerConstructor(playerId, turnScore, playerScore) {
   this.playerId = playerId;
-  this.turnTotal = turnTotal;
+  this.turnScore = turnScore;
   this.playerScore = playerScore;
 }
 
