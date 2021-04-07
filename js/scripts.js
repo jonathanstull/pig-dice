@@ -1,14 +1,4 @@
-// Business logic
-
-// create another constructor function for the game itself
-
-function Player(id, turnScore, playerScore) {
-  this.id = id;
-  this.turnScore = turnScore;
-  this.playerScore = playerScore;
-  this.id = 0;
-}
-
+//  ----------------------- Utility Logic -------------------------
 
 function getRandomInt() {
   let roll = 0;
@@ -17,17 +7,39 @@ function getRandomInt() {
   return roll = Math.floor(Math.random() * (max - min) + min);
 }
 
+// Business logic for PigDice
+
+function Game() {
+  this.players = {};
+  this.id = 0;
+};
+
+Game.prototype.incrementId = function () {
+  this.id += 1;
+  return this.id;
+}
+
+Game.prototype.assignPlayerId = function () {
+  player.id = this.incrementId();
+  this.players[player.id] = player;
+
+// Business logic for Player
+
+function Player(id, turnScore, playerScore) {
+  this.turnScore = turnScore;
+  this.playerScore = playerScore;
+}
+
 Player.prototype.addPlayer = function (player) {
   player.id = this.assignPlayerId()
   this.player[player.id] = player;
 }
 
-Player.prototype.assignPlayerId = function () {
-  this.id += 1;
-  return this.id;
-}
-
 Player.prototype.addTurnScore = function (player) {
+  // create an if statement that ends the turn if roll = 1
+  if (roll === 1) {
+    // end turn
+  }
   this.turnScore = turnScore + roll;
 };
 
@@ -37,12 +49,6 @@ Player.prototype.addPlayerScore = function (turnScore) {
 
 
 
-// create another prototype function to record the turn score
-
-// create another prototype function to add turnScore to playerScore
-
-// Add prototype methods to allow our PlayerConstructor to do different things
-// let player1 = new Player(playerId, turnScore, playerScore)
 
 // User interface logic
 
