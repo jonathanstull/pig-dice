@@ -9,7 +9,9 @@ function Player(id, turnScore, playerScore) {
   this.id = 0;
 }
 
+
 function getRandomInt() {
+  let roll = 0;
   let min = Math.ceil(1);
   let max = Math.floor(7);
   return roll = Math.floor(Math.random() * (max - min) + min);
@@ -25,7 +27,17 @@ Player.prototype.assignPlayerId = function () {
   return this.id;
 }
 
-// create another prototype function to record the score
+Player.prototype.addTurnScore = function (player) {
+  this.turnScore = turnScore + roll;
+};
+
+Player.prototype.addPlayerScore = function (turnScore) {
+  this.playerScore = turnScore + playerScore;
+}
+
+
+
+// create another prototype function to record the turn score
 
 // create another prototype function to add turnScore to playerScore
 
