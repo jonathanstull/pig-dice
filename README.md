@@ -58,11 +58,15 @@ Describe: PlayerConstructor();
   function PlayerConstructor {playerId, turnScore, playerScore}
   Expected Output: let playerName = new PlayerConstructor {playerId, turnScore, playerScore}
 
-  Describe: "createPlayer"
+Describe: createPlayer();
   2. Test: "It creates a player using the PlayerConstructor"
   Code:
-  let createPlayer = new PlayerConstructor(playerId, turnScore, playerScore)
-  Expected Output:
+  function createPlayer() {
+		return newPlayer = new PlayerConstructor(playerId, turnScore, playerScore);
+	};
+  Expected Output: createPlayer {playerId: 1, turnScore: 0, playerScore: 0}
+
+	3.
 
 ## MIT License
 
