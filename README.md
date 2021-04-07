@@ -40,9 +40,27 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 * _you used in your project_
 * _here_
 
-## Open Source statement
+## Specs
 
+* Business logic that creates a player object, stores a players total and round scores and a unique ID
+* Game rules:
+  *  If the player rolls a 1, they score nothing for the turn but the player score is not affected
+  * If the player rolls any other number, it is added to their turn total until their turn ends or they roll a 1
+  * When their turn ends, their turn total is added to their player score
+  * When the player score hits 100, the game ends, the player with 100 wins, and the winner receives a victory point
+* User logic that displays all relevant scoring information, the rules of the game, buttons for rolling and ending a turn
 
+## Tests
+
+Describe: PlayerConstructor();
+  1. Test: "It creates a constructor object for a player"
+  Code:
+  function PlayerConstructor {playerId, turnTotal, playerScore}
+  Expected Output: let playerName = new PlayerConstructor {playerId, turnTotal, playerScore}
+
+  2. Test:
+  Code:
+  Expected Output:
 
 ## MIT License
 
@@ -60,3 +78,44 @@ _{Let people know what to do if they run into any issues or have questions, idea
 ## Contact Information
 
 _{Add your contact information here.}_
+
+- What will happen when a user clicks "Play"?
+	- Random number generator that launches and generates those numbers
+- What objects will you need?
+	- A die with six properties assigning a number value corresponding with a die
+	- If ... else statement to determine actions based on the roll of the die
+	- A scoring object that stores the number value and score
+	- Player objects
+		- Assigned an objectId
+		- Keeps the score tallied as an objectId-like function
+- What key-value pairs will each object need to contain in order for the game to work?
+	- Player
+		- total-score: 
+		- round-score: {}
+		- round-roll-history:
+	- Die
+		- number1: 1
+		- number2: 2
+		- etc.
+- What functions?
+	- switch statement
+	- getRandomInt()
+- How will these be triggered throughout the gameplay?
+	- .on or .click function
+	- An "hold" button that passes values from round score to total score and begins another player's turn
+	- .show() and .hide() div that reveals the winner and has some sort of option to play again, probably in the form of a button
+	- Eventually, CRUD functionality to add/edit/delete players
+- How will information be collected from the user? How will it be displayed?
+	- Page elements that indicate:
+		- Player score
+		- Round score
+		- Opponent scoreboard
+		- Win counter
+	- Colors:
+		- Use red for buttons ending turns
+		- Use green for buttons to roll
+	- Page styling elements
+		- Headers
+		- Intro to the game
+		- Overview of game rules including the rules about scoring and victory conditions
+- When you have a broad overview of how you want to build your game, identify the simplest behavior, and perhaps what behaviors to tackle after that. Remember to start simple and work one step at a time.
