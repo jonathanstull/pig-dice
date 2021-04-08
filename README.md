@@ -125,3 +125,22 @@ _{Add your contact information here.}_
 		- Intro to the game
 		- Overview of game rules including the rules about scoring and victory conditions
 - When you have a broad overview of how you want to build your game, identify the simplest behavior, and perhaps what behaviors to tackle after that. Remember to start simple and work one step at a time.
+
+
+
+
+Pig Dice:
+		Game Object:
+						unique Id
+						dice values
+						players
+								player1
+										roll
+										hold
+										turn score (partially)
+										total score
+								player2
+										roll
+										hold
+										turn score (partially)
+										total score ()
